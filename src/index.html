@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>투표 사이트</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container" style="width: 650px">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <h1 class="text-center">투표 결과 - <span id="tag"></span></h1>
+          </div>
+          <hr />
+          <br />
+          <div id="loader">
+            <p class="text-center">잠시만 기다려주세요</p>
+          </div>
+          <div id="content" style="display: none">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">후보자</th>
+                  <th scope="col">득표수</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults"></tbody>
+            </table>
+            <hr />
+            <form id="voteForm">
+              <div class="form-group">
+                <label for="candidatesSelect">투표할 후보자를 골라주세요</label>
+                <select class="form-control" id="candidatesSelect"></select>
+              </div>
+              <button type="submit" class="btn btn-primary">투표</button>
+            </form>
+            <form id="voteTopicForm">
+              <label for="voteTopic">투표 주제:</label>
+              <input type="text" id="voteTopic" required />
+              <button type="submit" class="btn btn-primary">주제 설정</button>
+            </form>
+            <form id="addCandidateForm">
+              <div class="form-group">
+                <label for="newCandidateName"
+                  >새로운 후보자 이름을 입력해 주세요</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newCandidateName"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                새로운 후보자 추가
+              </button>
+            </form>
+            <div id="note">투표는 한 번만 가능합니다.</div>
+            <hr />
+            <div id="voteStatus" style="display: none">
+              이미 투표하셨습니다.
+            </div>
+            <div id="accountAddress" class="text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
