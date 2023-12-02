@@ -13,16 +13,9 @@ contract Vote {
     mapping(address => bool) public voters;
     uint256 public candidatesCount;
 
+    // 생성자에서 기본 후보자를 추가하지 않음
     constructor(string memory _topic) {
         voteTopic = _topic;
-        addCandidate("Kim");
-        addCandidate("Lee");
-        addCandidate("Park");
-    }
-
-    function addCandidate(string memory _name) private {
-        candidatesCount++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
     function addNewCandidate(string memory _name) public {
