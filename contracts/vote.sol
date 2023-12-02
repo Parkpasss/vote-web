@@ -13,7 +13,6 @@ contract Vote {
     mapping(address => bool) public voters;
     uint256 public candidatesCount;
 
-    // 생성자에서 기본 후보자를 추가하지 않음
     constructor(string memory _topic) {
         voteTopic = _topic;
     }
